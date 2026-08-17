@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="dolarTitulo"></title>
+</head>
+<body>
+    <h1 id="moeda"></h1>
+
+    <script type="module">
+        const moeda = document.getElementById("moeda")
+        const dolarTitulo = document.getElementById("dolarTitulo")
+        const consulta = await fetch("http://192.168.1.9:3000/moedas")
+        const dados = await consulta.json()
+        moeda.innerText = `${Number(1).toLocaleString("pt-br", {
+            style:"currency",
+            currency: "USD"
+        })} vale ${Number(dados.conversion_rates.BRL).toLocaleString("pt-br", {
+            style:"currency",
+            currency:"BRL"
+        })}`
+
+        dolarTitulo.innerText = `Dolar hoje | Cotação do dolar esta em ${Number(dados.conversion_rates.BRL).toLocaleString("pt-br", {
+            style:"currency",
+            currency:"BRL"
+        })}`
+    </script>
+</body>
+</html>

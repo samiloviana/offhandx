@@ -7,44 +7,38 @@
 }
 
 body {
-    background-color: #FCFCFC;
+    height: 100dvh;
 }
 
 header {
-    height: calc(100vh - 88dvh);
+    height: 10dvh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-size: 50px;
-    height: calc(100vh - 79dvh);
-}
-
-
-#search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 78dvh);
+    font-size: clamp(20px, 8dvw, 50px);
+    margin-bottom: 3dvh;
 }
 
 form {
-    
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 80dvw;
-    max-width: 790px;
-
+    justify-content: center;
+    width: 100vw;
 }
 
 input {
-    width: 100%;
-    border-radius: 15px;
+    width: 80vw;
+    max-width: 790px;
     padding: 10px;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid #cac8c8;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
 }
-
-
 
